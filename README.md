@@ -12,10 +12,10 @@ I build applied AI/ML systems, computer vision inspection pipelines, LLM-driven 
 | Category | Technologies & Tools |
 | :--- | :--- |
 | **Languages** | Python, Kotlin, TypeScript, JavaScript, SQL (PostgreSQL, PL/pgSQL), HTML5, CSS3 |
-| **Machine Learning & Deep Learning** | PyTorch, Hugging Face Transformers, LightGBM, XGBoost, scikit-learn, OpenCV, Faiss, Prophet, LSTM |
-| **LLMs, NLP & Agentic AI** | Local LLM Integration (Ollama), Prompt Engineering, WebSockets Streaming, Text Classification (DistilBERT) |
-| **Mobile & Android** | Kotlin 2.2, Jetpack Compose, Material 3, Clean Architecture, Room SQLite, SQLCipher, Google Tink AEAD, Robolectric |
-| **Backend & Web** | FastAPI, Node.js, Express.js, Supabase (Row-Level Security), RESTful APIs, React 18, Vite, Tailwind CSS |
+| **Machine Learning & Deep Learning** | PyTorch, Hugging Face Transformers, LightGBM, scikit-learn, OpenCV, Faiss, SHAP, Prophet, LSTM |
+| **LLMs, NLP & AI Systems** | Local GGUF LLM Runtime (`llama-cpp-python`, Qwen 2.5), Google Gemini API, Text Classification (DistilBERT) |
+| **Mobile & Android** | Kotlin 2.2, Jetpack Compose, Material 3, Clean Architecture, Room SQLite, Robolectric, Coroutines / StateFlow |
+| **Backend & Web** | FastAPI, Node.js, Express.js, Supabase (Row-Level Security), RESTful APIs, React 19, Vite, Tailwind CSS, Streamlit |
 | **DevOps & Testing** | Git, GitHub Actions (CI/CD), Docker, Gradle (Kotlin DSL), Pytest, Unit Testing, Linux / Shell |
 
 ---
@@ -23,58 +23,58 @@ I build applied AI/ML systems, computer vision inspection pipelines, LLM-driven 
 ## 🌟 Featured Engineering Projects
 
 ### 1. [SpendWise](https://github.com/suryacharan945/SpendWise)
-> **Android personal finance platform engineered with Jetpack Compose, Clean Architecture, and on-device behavioral AI.**
-* **Stack:** Kotlin 2.2.21, Jetpack Compose, Material 3, Room SQLite, SQLCipher (256-bit AES), Google Tink AEAD, Gradle 9.3.
+> **Android personal finance platform engineered with Jetpack Compose, Clean Architecture, and on-device behavioral heuristics.**
+* **Stack:** Kotlin 2.2.21, Jetpack Compose, Material 3, Room SQLite, Gradle 9.3, Robolectric.
 * **Engineering Highlights:**
   * Implemented an unboxed `@JvmInline value class Money(val paise: Long)` sub-unit currency engine, completely eliminating IEEE 754 floating-point rounding drift with zero heap object allocation.
-  * Designed an offline-first distributed sync engine with Last-Write-Wins (LWW) monotonic `syncVersion` tie-breaking and soft-delete tombstones.
-  * Built an on-device behavioral AI engine featuring a 4-week Weighted Moving Average (WMA) spend predictor, Z-Score anomaly detector, and multi-lingual voice expense parser.
+  * Designed deterministic conflict resolution algorithms with Last-Write-Wins (LWW) monotonic `syncVersion` tie-breaking and soft-delete tombstones.
+  * Built an on-device behavioral analysis engine featuring a 14-day Weighted Moving Average (WMA) spend predictor and statistical Z-Score anomaly detector.
   * Established 100% test coverage with **93 automated unit tests** across 19 suites and passing GitHub Actions CI.
 * **Links:** [Repository](https://github.com/suryacharan945/SpendWise) • [CI Status](https://github.com/suryacharan945/SpendWise/actions)
 
 ---
 
 ### 2. [GhostTerminal AI](https://github.com/suryacharan945/ghostterminal-ai)
-> **Interactive local AI terminal emulator featuring dual-agent orchestration and low-latency WebSocket streaming.**
-* **Stack:** FastAPI, React, TypeScript, Ollama (Local LLM), WebSockets, Pytest, GitHub Actions.
+> **Interactive local AI terminal emulator bridging local GGUF models with shell execution and safety guardrails.**
+* **Stack:** FastAPI, React, TypeScript, llama-cpp-python, Qwen 2.5 (0.5B GGUF), Pytest, GitHub Actions.
 * **Engineering Highlights:**
-  * Implemented an asynchronous client-server architecture capturing and streaming terminal sessions with low-latency WebSockets.
-  * Built custom command interception logic enabling local LLM agents to provide contextual CLI assistance and debugging without third-party cloud dependencies.
-  * Established automated CI via GitHub Actions covering backend pytest suites and frontend TypeScript builds.
+  * Implemented an asynchronous client-server architecture serving local LLM inference on-device using `llama-cpp-python`.
+  * Built pre-execution safety inspection logic intercepting potentially dangerous shell commands before execution.
+  * Automated testing via GitHub Actions covering backend pytest suites and frontend TypeScript builds.
 * **Links:** [Repository](https://github.com/suryacharan945/ghostterminal-ai) • [CI Status](https://github.com/suryacharan945/ghostterminal-ai/actions)
 
 ---
 
 ### 3. [SkillSpot 2.0](https://github.com/suryacharan945/skillspot)
 > **Multi-tenant web platform connecting vocational NGOs with learners for verified training programs.**
-* **Stack:** React 18, TypeScript, Vite, Tailwind CSS, Supabase, PostgreSQL, Row-Level Security (RLS).
+* **Stack:** React 19, TypeScript, Vite, Tailwind CSS, Supabase, PostgreSQL, Row-Level Security (RLS).
 * **Engineering Highlights:**
-  * Designed a multi-tenant relational schema with PostgreSQL Row-Level Security (RLS) separating NGO administrative data from public learner registries.
-  * Integrated Supabase OAuth and session guards, supporting role-based access control (RBAC) across learners, organizers, and super-admins.
-  * Deployed responsive web application on Vercel with client-side routing and clean state management.
-* **Links:** [Repository](https://github.com/suryacharan945/skillspot) • [Live Demo](https://skillspot-omega.vercel.app/)
+  * Designed a multi-tenant relational schema (`schema.sql`) with PostgreSQL Row-Level Security (RLS) separating NGO administrative data from learner registries.
+  * Integrated Supabase authentication and session guards with automated client fallback to local seed data for offline resilience.
+  * Deployed responsive web application on Vercel with automated GitHub Actions CI integrity testing.
+* **Links:** [Repository](https://github.com/suryacharan945/skillspot) • [Live Demo](https://skillspot-eight.vercel.app/) • [CI Status](https://github.com/suryacharan945/skillspot/actions)
 
 ---
 
 ### 4. [DefectVision AI](https://github.com/suryacharan945/DefectVision-AI)
 > **Autonomous 3D optical industrial inspection platform using PatchCore, PaDiM, and EfficientNet.**
-* **Stack:** PyTorch, Fastify, React, OpenCV, Faiss, EfficientNet-B0 v3, NumPy.
+* **Stack:** PyTorch, Fastify, React, OpenCV, Faiss, EfficientNet-B0 v3, PatchCore, PaDiM.
 * **Engineering Highlights:**
-  * Engineered an unsupervised anomaly detection and localization pipeline for manufacturing quality inspection on high-resolution industrial surfaces (MVTec AD).
-  * Implemented memory-bank embedding compression using Faiss k-NN vector search alongside PaDiM multivariate Gaussian distribution modeling.
-  * Evaluated localized defect heatmaps using ROC-AUC and pixel-level anomaly scoring for production inspection monitoring.
-* **Links:** [Repository](https://github.com/suryacharan945/DefectVision-AI)
+  * Evaluated unsupervised surface defect detection pipelines across 856 industrial images on the MVTec AD benchmark (EfficientNet-B0 Mean AUROC: 0.9732, PatchCore Mean AUROC: 0.9651, PaDiM Mean AUROC: 0.8911).
+  * Implemented memory-bank embedding compression using Faiss k-NN vector search alongside PaDiM multivariate Gaussian modeling.
+  * Deployed interactive web inspector and analytics dashboard on Vercel with automated CI verification.
+* **Links:** [Repository](https://github.com/suryacharan945/DefectVision-AI) • [Live Demo](https://defectvision-ai.vercel.app/) • [CI Status](https://github.com/suryacharan945/DefectVision-AI/actions)
 
 ---
 
 ### 5. [MerchantGuard AI](https://github.com/suryacharan945/MerchantGuardAI)
-> **Financial transaction fraud detection engine using gradient boosting with explainable AI (XAI).**
-* **Stack:** Python, LightGBM, XGBoost, Streamlit, Scikit-learn, Google Gemini API.
+> **Financial transaction fraud detection engine using gradient boosting, Platt scaling, and explainable AI.**
+* **Stack:** Python, LightGBM, Streamlit, Scikit-learn, SHAP (TreeExplainer), Google Gemini API, FAISS.
 * **Engineering Highlights:**
-  * Developed an ensemble gradient boosting classifier tuned for severe transaction class imbalance (precision-recall threshold optimization).
-  * Constructed interactive dashboards delivering merchant fraud risk scoring with low-latency inference.
-  * Integrated an explainable AI reasoning layer to transform feature importances into clear fraud narrative justifications.
-* **Links:** [Repository](https://github.com/suryacharan945/MerchantGuardAI)
+  * Developed an ensemble detection pipeline combining LightGBM gradient boosting with Platt scaling probability calibration to handle extreme transaction class imbalance.
+  * Integrated SHAP TreeExplainer local attribution alongside FAISS policy retrieval and Gemini natural language fraud incident reporting.
+  * Constructed interactive Streamlit dashboard with persistent SQLite decision audit logging and automated CI pipeline tests.
+* **Links:** [Repository](https://github.com/suryacharan945/MerchantGuardAI) • [Live Demo](https://merchantguardai.streamlit.app/) • [CI Status](https://github.com/suryacharan945/MerchantGuardAI/actions)
 
 ---
 
@@ -82,16 +82,17 @@ I build applied AI/ML systems, computer vision inspection pipelines, LLM-driven 
 > **NLP classification pipeline fine-tuning DistilBERT for online misinformation detection.**
 * **Stack:** PyTorch, Hugging Face Transformers, DistilBERT, Gradio, Python.
 * **Engineering Highlights:**
-  * Fine-tuned a lightweight Transformer architecture (DistilBERT) for binary sequence classification, balancing inference speed with high classification accuracy.
-  * Built modular training (`train.py`) and inference (`inference.py`) pipelines with an interactive Gradio web demonstration.
-* **Links:** [Repository](https://github.com/suryacharan945/fake-news-detector)
+  * Fine-tuned `distilbert-base-uncased` for binary sequence classification (`FAKE` vs `REAL`), hosted publicly on Hugging Face Model Hub.
+  * Built an interactive Gradio web demonstration supporting single-article evaluation with softmax label confidences and batch CSV processing.
+  * Automated testing and validation via GitHub Actions CI pipeline.
+* **Links:** [Repository](https://github.com/suryacharan945/fake-news-detector) • [Model Hub](https://huggingface.co/suryacharan945/fake-news-detector) • [CI Status](https://github.com/suryacharan945/fake-news-detector/actions)
 
 ---
 
 ## 🔬 Hackathons & Open Source Contributions
 
-* **Hacktoberfest 2026:** Created and open-sourced [GhostTerminal AI](https://github.com/suryacharan945/ghostterminal-ai), building a full-stack terminal application with automated CI testing and dual-agent local LLM execution.
-* **DeepLearn Hackathon Series:** Participated in competitive machine learning challenges spanning NLP Renaissance historical document extraction, gravitational lensing detection, and scientific ML tracks ([DeepLearnHackathon](https://github.com/suryacharan945/DeepLearnHackathon)).
+* **Hacktoberfest 2026:** Created and open-sourced [GhostTerminal AI](https://github.com/suryacharan945/ghostterminal-ai), building a full-stack terminal application with automated CI testing and local GGUF LLM execution.
+* **DeepLearn Hackathon Series:** Participated in competitive machine learning challenges spanning NLP historical document extraction, gravitational lensing detection, and scientific ML tracks ([DeepLearnHackathon](https://github.com/suryacharan945/DeepLearnHackathon)).
 
 ---
 
